@@ -1,16 +1,23 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: "My Docker Action"
+description: "A GitHub Action that runs a shell script inside a Docker container"
+author: "Chiyo Chan"
+
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+  example-input:
+    description: "An example input variable"
+    required: false
+    default: "World"
+
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  example-output:
+    description: "An example output variable"
+
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.example-input }}
+
+branding:
+  icon: "mic"
+  color: "blue"
